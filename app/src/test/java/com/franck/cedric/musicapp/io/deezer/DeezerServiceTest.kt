@@ -3,7 +3,7 @@ package com.franck.cedric.musicapp.io.deezer
 import com.franck.cedric.musicapp.domain.io.deezer.PlaylistInfo
 import com.franck.cedric.musicapp.domain.io.deezer.PlaylistTracks
 import com.franck.cedric.musicapp.domain.io.deezer.UserPlaylists
-import com.franck.cedric.musicapp.domain.io.deezer.deezerRxService
+import com.franck.cedric.musicapp.domain.io.deezer.deezerRxApi
 import io.reactivex.observers.TestObserver
 import junit.framework.Assert.*
 import org.junit.Test
@@ -13,7 +13,7 @@ class DeezerServiceTest {
     @Test
     fun testGetUserPlaylist() {
         val testObserver = TestObserver<UserPlaylists>()
-        deezerRxService.userPlaylists(1)
+        deezerRxApi.userPlaylists(1)
             .subscribe(testObserver)
 
         testObserver.assertComplete()
@@ -31,7 +31,7 @@ class DeezerServiceTest {
     @Test
     fun testGetPlaylist() {
         val testObserver = TestObserver<PlaylistInfo>()
-        deezerRxService.playlist(5)
+        deezerRxApi.playlist(5)
             .subscribe(testObserver)
 
         testObserver.assertComplete()
@@ -49,7 +49,7 @@ class DeezerServiceTest {
     @Test
     fun testGetPlaylistTracks() {
         val testObserver = TestObserver<PlaylistTracks>()
-        deezerRxService.playlistTracks(5)
+        deezerRxApi.playlistTracks(5)
             .subscribe(testObserver)
 
         testObserver.assertComplete()
