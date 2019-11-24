@@ -17,7 +17,7 @@ class MusicViewModel(
     }
 
     fun start() {
-
+        deezerService.lifecycleOwner = lifecycleOwner
         deezerService.getUserPlaylists(5, { userPlaylistDeezer ->
             val playlists = userPlaylistDeezer.data.map { playlistsMapper.map(it) }
             dispatch(

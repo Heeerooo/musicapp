@@ -18,6 +18,7 @@ class PlaylistViewModel(
 
 
     fun start() {
+        deezerService.lifecycleOwner = lifecycleOwner
         deezerService.getPlaylistTracks(playlistId, { playlistTracks ->
             val tracks = playlistTracks.data.map { trackMapper.map(it) }
             dispatch(Event.ShowTracks(tracks))

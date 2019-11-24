@@ -16,7 +16,12 @@ abstract class EventViewModel<T : EventViewModel.Event> : ViewModel() {
 
     }
 
-    fun observe(owner: LifecycleOwner, observer: Observer<T>) = event.observe(owner, observer)
+    protected var lifecycleOwner: LifecycleOwner? = null
+
+    fun observe(owner: LifecycleOwner, observer: Observer<T>) {
+        lifecycleOwner = owner
+        event.observe(owner, observer)
+    }
 
     protected fun dispatch(event: T) {
         this.event.value = event
