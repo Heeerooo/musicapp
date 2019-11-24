@@ -19,7 +19,7 @@ data class Track(
     val title: String,
     val duration: Long,
     val artist: Artist,
-    val album: Album
+    val album: Album?
 )
 
 data class Album(@SerializedName("cover_medium") val cover: String,

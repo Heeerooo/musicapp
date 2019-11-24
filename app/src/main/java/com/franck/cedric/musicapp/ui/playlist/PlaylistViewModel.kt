@@ -25,4 +25,8 @@ class PlaylistViewModel(
             dispatch(Event.Error(it.message))
         })
     }
+
+    fun onTrackClicked(track: Track) {
+
+    }
 }

@@ -58,7 +58,7 @@ class MusicActivity : AppCompatActivity() {
     }
 
     private fun showPlaylists(playlists: List<Playlist>) {
-        playlistAdapter.setPlaylists(playlists)
+        playlistAdapter.addPlaylists(playlists)
     }
 
     private fun setUpRecycler() {

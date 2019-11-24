@@ -36,7 +36,7 @@ class PlaylistAdapter(private val playlists: MutableList<Playlist>) :
         onItemClick = onClick
     }
 
-    fun setPlaylists(playlists: List<Playlist>) {
+    fun addPlaylists(playlists: List<Playlist>) {
         val previousCount = itemCount
         this.playlists.addAll(playlists)
         notifyItemRangeInserted(previousCount, itemCount)

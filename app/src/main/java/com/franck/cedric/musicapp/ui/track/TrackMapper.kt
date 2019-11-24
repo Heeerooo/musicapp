@@ -4,9 +4,9 @@ import com.franck.cedric.musicapp.domain.Track
 import com.franck.cedric.musicapp.io.deezer.Track as DeezerTrack
 
 
-class TrackMapper() {
+class TrackMapper {
 
     fun map(deezerTrack: DeezerTrack) = with(deezerTrack) {
-        Track(title, album.title, duration, album.cover)
+        Track(title, album?.title, artist.name, duration, album?.cover)
     }
 }
