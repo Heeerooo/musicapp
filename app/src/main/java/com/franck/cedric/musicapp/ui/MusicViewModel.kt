@@ -1,7 +1,7 @@
 package com.franck.cedric.musicapp.ui
 
 import com.franck.cedric.musicapp.domain.Playlist
-import com.franck.cedric.musicapp.domain.io.deezer.DeezerService
+import com.franck.cedric.musicapp.io.deezer.DeezerService
 
 class MusicViewModel(
     private val deezerService: DeezerService  = DeezerService(),
@@ -10,6 +10,7 @@ class MusicViewModel(
 
     sealed class Event : EventViewModel.Event() {
         class ShowPlaylists(val playlists: List<Playlist>) : Event()
+        class ShowPlaylist(val id: Int) : Event()
         class Error(val message: String?) : Event()
     }
 
@@ -23,8 +24,8 @@ class MusicViewModel(
         })
     }
 
-    fun playlistClicked(it: Playlist) {
-
+    fun playlistClicked(playlist: Playlist) {
+        dispatch(Event.ShowPlaylist(playlist.id))
     }
 
 }

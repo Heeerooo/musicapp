@@ -1,4 +1,4 @@
-package com.franck.cedric.musicapp.domain.io.deezer
+package com.franck.cedric.musicapp.io.deezer
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

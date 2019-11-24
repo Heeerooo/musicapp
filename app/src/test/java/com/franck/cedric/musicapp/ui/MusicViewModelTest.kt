@@ -6,8 +6,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.Observer
-import com.franck.cedric.musicapp.domain.io.deezer.DeezerService
-import com.franck.cedric.musicapp.domain.io.deezer.UserPlaylists
+import com.franck.cedric.musicapp.io.deezer.DeezerService
+import com.franck.cedric.musicapp.io.deezer.UserPlaylists
 import io.mockk.every
 import io.mockk.mockk
 import junit.framework.Assert.assertTrue

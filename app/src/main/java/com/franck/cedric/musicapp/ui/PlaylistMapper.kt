@@ -1,7 +1,7 @@
 package com.franck.cedric.musicapp.ui
 
 import com.franck.cedric.musicapp.domain.Playlist
-import com.franck.cedric.musicapp.domain.io.deezer.PlaylistInfo
+import com.franck.cedric.musicapp.io.deezer.PlaylistInfo
 
 class PlaylistMapper {
 

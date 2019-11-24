@@ -1,4 +1,4 @@
-package com.franck.cedric.musicapp.domain.io.deezer
+package com.franck.cedric.musicapp.io.deezer
 
 import com.google.gson.annotations.SerializedName
 

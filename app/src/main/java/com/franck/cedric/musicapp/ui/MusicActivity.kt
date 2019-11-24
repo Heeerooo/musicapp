@@ -12,8 +12,7 @@ import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter
 import jp.wasabeef.recyclerview.animators.SlideInDownAnimator
 import kotlinx.android.synthetic.main.activity_music.*
 import android.content.DialogInterface
-
-
+import com.facebook.drawee.backends.pipeline.Fresco
 
 
 class MusicActivity : AppCompatActivity() {
@@ -26,6 +25,7 @@ class MusicActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_music)
         setUpRecycler()
+        Fresco.initialize(this)
         viewModel = viewModel()
         viewModel.observe(this, Observer { event ->
             when (event) {

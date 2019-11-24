@@ -1,9 +1,5 @@
 package com.franck.cedric.musicapp.io.deezer
 
-import com.franck.cedric.musicapp.domain.io.deezer.PlaylistInfo
-import com.franck.cedric.musicapp.domain.io.deezer.PlaylistTracks
-import com.franck.cedric.musicapp.domain.io.deezer.UserPlaylists
-import com.franck.cedric.musicapp.domain.io.deezer.deezerRxApi
 import io.reactivex.observers.TestObserver
 import junit.framework.Assert.*
 import org.junit.Test

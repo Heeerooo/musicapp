@@ -27,7 +27,7 @@ class PlaylistAdapter(private val playlists: MutableList<Playlist>) :
         with(holder.itemView) {
             setOnClickListener { onItemClick(playlist) }
             name.text = playlist.name
-
+            cover.setImageURI(playlist.coverUrl)
         }
     }
 

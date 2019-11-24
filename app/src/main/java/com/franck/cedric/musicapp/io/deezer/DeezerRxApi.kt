@@ -1,4 +1,4 @@
-package com.franck.cedric.musicapp.domain.io.deezer
+package com.franck.cedric.musicapp.io.deezer
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

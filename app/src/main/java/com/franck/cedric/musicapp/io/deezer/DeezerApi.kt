@@ -1,4 +1,4 @@
-package com.franck.cedric.musicapp.domain.io.deezer
+package com.franck.cedric.musicapp.io.deezer
 
 import io.reactivex.Single
 import retrofit2.http.GET
