@@ -6,7 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class DeezerService(private val deezerApi: DeezerApi = deezerRxApi) {
+class DeezerService(private val deezerApi: DeezerApi) {
 
     private val compositeDisposable = CompositeDisposable()
 

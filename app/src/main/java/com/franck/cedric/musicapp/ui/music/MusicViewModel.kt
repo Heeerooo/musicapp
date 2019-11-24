@@ -1,13 +1,15 @@
 package com.franck.cedric.musicapp.ui.music
 
+import appDeezerService
+import appPlaylistMapper
 import com.franck.cedric.musicapp.domain.Playlist
 import com.franck.cedric.musicapp.io.deezer.DeezerService
 import com.franck.cedric.musicapp.ui.EventViewModel
 import com.franck.cedric.musicapp.ui.playlist.PlaylistMapper
 
 class MusicViewModel(
-    private val deezerService: DeezerService  = DeezerService(),
-    private val playlistsMapper: PlaylistMapper = PlaylistMapper()
+    private val deezerService: DeezerService  = appDeezerService,
+    private val playlistsMapper: PlaylistMapper = appPlaylistMapper
 ) : EventViewModel<MusicViewModel.Event>() {
 
     sealed class Event : EventViewModel.Event() {

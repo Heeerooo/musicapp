@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import appDurationFormatter
 import com.franck.cedric.musicapp.R
 import com.franck.cedric.musicapp.domain.DurationFormatter
 import com.franck.cedric.musicapp.domain.Track
@@ -12,7 +13,7 @@ import com.franck.cedric.musicapp.ui.AnimatedAdapter
 import kotlinx.android.synthetic.main.item_track.view.*
 
 
-class TracksAdapter(private val durationFormatter: DurationFormatter = DurationFormatter(),
+class TracksAdapter(private val durationFormatter: DurationFormatter = appDurationFormatter,
                     private val tracks: MutableList<Track>) :
     AnimatedAdapter<TracksAdapter.ViewHolder>(){
 

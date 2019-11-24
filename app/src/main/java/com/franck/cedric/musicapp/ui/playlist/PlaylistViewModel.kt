@@ -1,5 +1,8 @@
 package com.franck.cedric.musicapp.ui.playlist
 
+import appDeezerService
+import appPlaylistMapper
+import appTrackMapper
 import com.franck.cedric.musicapp.domain.Playlist
 import com.franck.cedric.musicapp.domain.Track
 import com.franck.cedric.musicapp.io.deezer.DeezerService
@@ -7,9 +10,9 @@ import com.franck.cedric.musicapp.ui.EventViewModel
 import com.franck.cedric.musicapp.ui.track.TrackMapper
 
 class PlaylistViewModel(
-    private val deezerService: DeezerService = DeezerService(),
-    private val trackMapper: TrackMapper = TrackMapper(),
-    private val playlistMapper: PlaylistMapper = PlaylistMapper(),
+    private val deezerService: DeezerService = appDeezerService,
+    private val trackMapper: TrackMapper = appTrackMapper,
+    private val playlistMapper: PlaylistMapper = appPlaylistMapper,
     private val playlistId: Int
 ) : EventViewModel<PlaylistViewModel.Event>() {
 
