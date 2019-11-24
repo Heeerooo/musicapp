@@ -64,7 +64,7 @@ class MusicActivity : AppCompatActivity() {
     }
 
     private fun setUpRecycler() {
-        playlistAdapter = PlaylistAdapter(mutableListOf())
+        playlistAdapter = PlaylistAdapter(playlists = mutableListOf())
         playlistAdapter.setOnItemClick { viewModel.playlistClicked(it) }
         playlists_recycle.layoutManager = GridLayoutManager(this, 3)
         playlists_recycle.adapter = playlistAdapter

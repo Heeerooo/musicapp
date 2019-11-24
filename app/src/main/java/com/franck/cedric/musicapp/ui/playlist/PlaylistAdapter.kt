@@ -8,6 +8,8 @@ import com.franck.cedric.musicapp.R
 import com.franck.cedric.musicapp.domain.Playlist
 import com.franck.cedric.musicapp.ui.AnimatedAdapter
 import kotlinx.android.synthetic.main.item_playlist.view.*
+import kotlinx.android.synthetic.main.item_playlist.view.cover
+
 
 class PlaylistAdapter(private val playlists: MutableList<Playlist>) :
     AnimatedAdapter<PlaylistAdapter.ViewHolder>(){
@@ -42,7 +44,5 @@ class PlaylistAdapter(private val playlists: MutableList<Playlist>) :
         notifyItemRangeInserted(previousCount, itemCount)
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-    }
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }

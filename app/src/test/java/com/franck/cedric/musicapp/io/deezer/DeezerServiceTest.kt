@@ -57,7 +57,7 @@ class DeezerServiceTest {
             assertNotNull(data[0].artist)
             assertNotNull(data[0].artist.name)
             assertNotNull(data[0].album)
-            assertNotNull(data[0].album.cover)
+            assertNotNull(data[0].album?.cover)
         }
 
     }

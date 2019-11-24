@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.franck.cedric.musicapp.R
+import com.franck.cedric.musicapp.domain.DurationFormatter
 import com.franck.cedric.musicapp.domain.Track
 import com.franck.cedric.musicapp.ui.AnimatedAdapter
 import kotlinx.android.synthetic.main.item_track.view.*
 
 
-class TracksAdapter(private val tracks: MutableList<Track>) :
+class TracksAdapter(private val durationFormatter: DurationFormatter = DurationFormatter(),
+                    private val tracks: MutableList<Track>) :
     AnimatedAdapter<TracksAdapter.ViewHolder>(){
 
     private var onItemClick: (Track) -> Unit  = {}
@@ -33,6 +35,7 @@ class TracksAdapter(private val tracks: MutableList<Track>) :
             title.text = track.name
             info.text = "${track.albumName} - ${track.artistName}"
             cover.setImageURI(track.coverUrl)
+            duration.text = durationFormatter.formatDuration(track.duration)
         }
     }
 
@@ -46,7 +49,5 @@ class TracksAdapter(private val tracks: MutableList<Track>) :
         notifyItemRangeInserted(previousCount, itemCount)
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-    }
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }

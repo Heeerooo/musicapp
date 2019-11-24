@@ -47,7 +47,7 @@ class PlaylistActivity : AppCompatActivity() {
     }
 
     private fun setUpRecycler() {
-        tracksAdapter = TracksAdapter(mutableListOf())
+        tracksAdapter = TracksAdapter(tracks = mutableListOf())
         tracksAdapter.setOnItemClick { viewModel.onTrackClicked(it) }
         tracks_recycler.layoutManager = LinearLayoutManager(this)
         tracks_recycler.itemAnimator = SlideInLeftAnimator()
