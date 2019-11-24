@@ -1,5 +1,6 @@
 package com.franck.cedric.musicapp.ui.music
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,7 @@ class MusicActivity : AppCompatActivity() {
         setContentView(R.layout.activity_music)
         setUpRecycler()
         Fresco.initialize(this)
+        toolbar.title = getString(R.string.app_name)
         viewModel = viewModel()
         viewModel.observe(this, Observer { event ->
             when (event) {

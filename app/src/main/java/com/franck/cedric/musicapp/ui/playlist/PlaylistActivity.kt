@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.franck.cedric.musicapp.R
+import com.franck.cedric.musicapp.domain.Playlist
 import com.franck.cedric.musicapp.domain.Track
 import com.franck.cedric.musicapp.ui.track.TracksAdapter
 import com.franck.cedric.musicapp.ui.utils.viewModel
@@ -34,9 +35,15 @@ class PlaylistActivity : AppCompatActivity() {
         viewModel.observe(this, Observer { event ->
             when (event) {
                 is PlaylistViewModel.Event.ShowTracks -> showTracks(event.tracks)
+                is PlaylistViewModel.Event.ShowPlaylistInfo -> showPlaylistInfo(event.playlist)
             }
         })
         viewModel.start()
+    }
+
+    private fun showPlaylistInfo(playlist: Playlist) {
+        cover_playlist.setImageURI(playlist.coverUrl)
+        toolbar.title = playlist.name
     }
 
     private fun setUpRecycler() {
