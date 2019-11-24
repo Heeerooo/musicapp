@@ -1,4 +1,4 @@
-package com.franck.cedric.musicapp.ui
+package com.franck.cedric.musicapp.ui.playlist
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.franck.cedric.musicapp.R
 import com.franck.cedric.musicapp.domain.Playlist
+import com.franck.cedric.musicapp.ui.AnimatedAdapter
 import kotlinx.android.synthetic.main.item_playlist.view.*
 
 class PlaylistAdapter(private val playlists: MutableList<Playlist>) :

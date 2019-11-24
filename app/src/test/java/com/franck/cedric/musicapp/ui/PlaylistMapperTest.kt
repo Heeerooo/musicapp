@@ -1,6 +1,7 @@
 package com.franck.cedric.musicapp.ui
 
 import com.franck.cedric.musicapp.io.deezer.PlaylistInfo
+import com.franck.cedric.musicapp.ui.playlist.PlaylistMapper
 import org.junit.Assert.*
 import org.junit.Test
 import java.time.Duration

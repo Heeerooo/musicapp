@@ -1,5 +1,7 @@
 package com.franck.cedric.musicapp.ui.utils
 
+import android.app.Activity
+import android.content.Intent
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -20,3 +22,8 @@ class BaseViewModelFactory<T>(val creator: () -> T) : ViewModelProvider.Factory 
         return creator() as T
     }
 }
+
+inline fun <reified T> Activity.launchActivity(options: Intent.() -> Unit = {}) =
+    startActivity(Intent(this, T::class.java).apply {
+        options()
+    })

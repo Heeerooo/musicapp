@@ -8,5 +8,5 @@ data class Playlist(val id: Int,
 
 data class Track(val name: String,
                  val albumName: String,
-                 val duration: Duration,
+                 val duration: Long,
                  val coverUrl: String)

@@ -17,11 +17,12 @@ data class PlaylistTracks(val data: List<Track>)
 data class Track(
     val id: Int,
     val title: String,
-    val duration: Int,
+    val duration: Long,
     val artist: Artist,
     val album: Album
 )
 
-data class Album(@SerializedName("cover_medium") val cover: String)
+data class Album(@SerializedName("cover_medium") val cover: String,
+                 val title: String)
 
 data class Artist(val name: String)

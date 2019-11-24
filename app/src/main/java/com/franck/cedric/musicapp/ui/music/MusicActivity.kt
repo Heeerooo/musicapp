@@ -1,4 +1,4 @@
-package com.franck.cedric.musicapp.ui
+package com.franck.cedric.musicapp.ui.music
 
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -8,11 +8,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.franck.cedric.musicapp.R
 import com.franck.cedric.musicapp.domain.Playlist
 import com.franck.cedric.musicapp.ui.utils.viewModel
-import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter
 import jp.wasabeef.recyclerview.animators.SlideInDownAnimator
 import kotlinx.android.synthetic.main.activity_music.*
-import android.content.DialogInterface
 import com.facebook.drawee.backends.pipeline.Fresco
+import com.franck.cedric.musicapp.ui.playlist.PlaylistActivity
+import com.franck.cedric.musicapp.ui.playlist.PlaylistActivity.Companion.PLAYLIST_ID
+import com.franck.cedric.musicapp.ui.playlist.PlaylistAdapter
+import com.franck.cedric.musicapp.ui.utils.launchActivity
 
 
 class MusicActivity : AppCompatActivity() {
@@ -31,9 +33,16 @@ class MusicActivity : AppCompatActivity() {
             when (event) {
                 is MusicViewModel.Event.ShowPlaylists -> showPlaylists(event.playlists)
                 is MusicViewModel.Event.Error -> errorDialog(event.message)
+                is MusicViewModel.Event.ShowPlaylist -> showPlaylist(event.id)
             }
         })
         viewModel.start()
+    }
+
+    private fun showPlaylist(id: Int) {
+        launchActivity<PlaylistActivity> {
+            putExtra(PLAYLIST_ID, id)
+        }
     }
 
     private fun errorDialog(message: String?) {

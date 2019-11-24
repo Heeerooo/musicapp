@@ -13,6 +13,7 @@ abstract class EventViewModel<T : EventViewModel.Event> : ViewModel() {
 
     abstract class Event {
         override fun toString() = this.javaClass.simpleName.toString()
+
     }
 
     fun observe(owner: LifecycleOwner, observer: Observer<T>) = event.observe(owner, observer)

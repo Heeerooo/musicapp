@@ -8,6 +8,8 @@ import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.Observer
 import com.franck.cedric.musicapp.io.deezer.DeezerService
 import com.franck.cedric.musicapp.io.deezer.UserPlaylists
+import com.franck.cedric.musicapp.ui.music.MusicViewModel
+import com.franck.cedric.musicapp.ui.playlist.PlaylistMapper
 import io.mockk.every
 import io.mockk.mockk
 import junit.framework.Assert.assertTrue
@@ -32,7 +34,8 @@ class MusicViewModelTest {
     fun init() {
         deezerService = mockk()
         playlistMapper = mockk()
-        musicViewModel = MusicViewModel(deezerService, playlistMapper)
+        musicViewModel =
+            MusicViewModel(deezerService, playlistMapper)
 
         val owner = mockk<LifecycleOwner>(relaxed = true) {
             every { lifecycle } returns LifecycleRegistry(this).also {
