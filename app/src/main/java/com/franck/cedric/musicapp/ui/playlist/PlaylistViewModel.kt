@@ -16,7 +16,6 @@ class PlaylistViewModel(
         class Error(val message: String?) : Event()
     }
 
-
     fun start() {
         deezerService.lifecycleOwner = lifecycleOwner
         deezerService.getPlaylistTracks(playlistId, { playlistTracks ->

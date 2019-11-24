@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.facebook.drawee.backends.pipeline.Fresco
+import com.franck.cedric.musicapp.R
 import com.franck.cedric.musicapp.domain.Track
 import com.franck.cedric.musicapp.ui.utils.viewModel
 
@@ -18,6 +19,7 @@ class PlaylistActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.playlists_activity)
         setUpRecycler()
         Fresco.initialize(this)
         viewModel = viewModel {
@@ -28,7 +30,7 @@ class PlaylistActivity : AppCompatActivity() {
                 is PlaylistViewModel.Event.ShowTracks -> showTracks(event.tracks)
             }
         })
-
+        viewModel.start()
 
     }
 
