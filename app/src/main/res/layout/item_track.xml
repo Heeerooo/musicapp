@@ -17,11 +17,12 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="0dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        android:maxWidth="200dp"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintBottom_toTopOf="@+id/info"
         app:layout_constraintStart_toEndOf="@+id/cover"
         app:layout_constraintTop_toTopOf="@+id/cover"
@@ -29,9 +30,10 @@
 
     <TextView
         android:id="@+id/info"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:maxWidth="200dp"
+        android:maxLines="1"
+        android:ellipsize="end"
         tools:text="info"
         app:layout_constraintBottom_toBottomOf="@+id/cover"
         app:layout_constraintStart_toStartOf="@+id/title" />
